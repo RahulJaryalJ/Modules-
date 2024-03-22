@@ -1,0 +1,182 @@
+
+
+
+
+<!doctype html>
+ <html>
+   <head>
+      <meta charset="UTF-8">
+      
+      <title> Analog Watch </title>
+      
+<style>
+    
+body{
+      
+   font-family: fantasy;
+  
+   
+   width: 100vw;
+   height:100vh;
+  
+}
+
+
+  
+  .container {
+       position: relative;
+       top: 10%;
+       width: 20rem;
+       height: 20rem;
+       border-radius: 2rem 1rem;
+       display: flex;
+       justify-content: center;
+       align-items: center;
+       margin: 0 auto;
+       background-color: var(--color);
+}
+
+.clock{
+      position: relative;
+      width: 100%;
+      height: 100%;
+      border: 1px solid orange;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color:var(--color);     
+      
+}
+
+.clock span{
+     position: absolute;
+     width: 100%;
+     height: 100%;
+     transform: rotate(calc(30deg * Var(--i)));
+          
+           
+     text-align:center;
+
+}
+.clock::before{
+    content: '';
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: black;    
+    z-index:1;
+    }
+
+.clock span b {
+
+    position : absolute;
+   transform: rotate(calc(-30deg * var(--i)));
+   font-size: 2rem;
+
+
+}
+.bg i{
+    width: 6px;
+   
+    position:absolute;
+    background-color: grey;
+    border-radius: 4rem;
+     background-color: var(--color);
+    height: var(--len);
+
+  
+}
+
+.bg{
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items:flex-end;
+
+   
+
+ 
+
+}
+
+    </style>
+    
+</head>
+  <body>
+    
+    <main class ="container" style= "--color: orange;">
+      
+       <div class = "clock" style= "--color: bisque;">
+         <div id = "hr" class =" bg hr"  style= "--color: red;  --len:72px";><i> </i> </div> 
+         <div id = "mn" class ="bg mn " style= "--color:blue; --len: 82px";> <i> </i></div>
+         <div id ="ss"  class ="bg mn " style= "--color:orange; --len: 92px";> <i>  </i></div>
+
+        <span style = " --i:1";> <b> 1</b> </span>
+        <span style = " --i:2";> <b> 2 </b> </span>
+        <span style = " --i:3";> <b> 3 </b> </span>
+        <span style = " --i:4";> <b> 4 </b> </span>
+        <span style = " --i:5";> <b> 5 </b> </span> 
+        <span style = " --i:6";> <b> 6 </b> </span>
+        <span style = " --i:7";> <b> 7 </b> </span>
+        <span style = " --i:8";> <b> 8 </b> </span>
+        <span style = " --i:9";> <b> 9 </b> </span>
+        <span style = " --i:10";> <b> 10 </b> </span>
+        <span style = " --i:11";> <b> 11 </b> </span>
+        <span style = " --i:12";> <b> 12 </b> </span>
+      
+      </div>
+
+    </main>
+   
+   
+ <script>
+   
+let hr= document.getElementById("hr");
+
+
+let mm= document.getElementById("mn");
+let ss= document.getElementById("ss");
+  
+window.onload= tick;
+
+function tick() {
+
+  let date= new Date();
+
+
+   let hrs= date.getHours();
+    let mns= date.getMinutes();
+     let scs= date.getSeconds();
+
+let hR= 30*hrs+ mns/2;
+
+let mR= 6*mns;
+ let scn = 6*scs;
+
+
+
+
+hr.style.transform= 'rotate(' +hR + 'deg)';
+
+mm.style.transform='rotate(' +mR + 'deg)';
+ss.style.transform= 'rotate(' +scn + 'deg)';
+
+
+  
+};
+
+
+
+
+
+        
+
+
+
+
+
+    </script>     
+
+  </body>
+  </html>

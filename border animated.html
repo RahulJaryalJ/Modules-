@@ -1,0 +1,79 @@
+
+<!doctype html>
+ <html>
+    <head>
+        <meta charset="UTF-8">
+         <title> Border animation </title>
+  <style>
+  body{
+   min-height: 100vh;
+   display: flex;
+   justify-content: center;
+   align-items: center;   
+ }
+
+.container{
+  width: 300px;
+  height:400px;
+  background-color: black;
+  position: relative;
+display: flex;
+ justify-content: center;
+  align-items: center;
+border-radius: 10px;
+overflow: hidden;
+ }
+
+.container::before{
+  content: '';
+  display: block;
+  width: 50%;
+position: absolute;
+  height: 120%;
+
+  background:linear-gradient(blue, orange);
+ animation: rotate 4s linear infinite;
+
+}
+
+.container::after{
+       content: ' YEAH';
+       display: block;
+       position: absolute;
+       inset:4px;
+        border-radius: 8px;
+       COLOR: WHITESMOKE;
+      display: flex;
+     justify-content: CENTER;
+      align-items: center;
+       background-color: black;
+      
+ 
+}
+ @keyframes rotate{
+from{
+  transform: rotate(0deg);
+}
+ to {
+    transform: rotate(360deg);
+    }
+}
+
+ 
+ </style>
+
+    </head>
+
+
+  <body>
+  
+
+
+ <div class=" container">
+     </div>
+
+
+   
+
+    </body>
+ </html>

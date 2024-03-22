@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=M, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+canvas{
+  border: 1px solid lightBlue;   
+      
+}
+body{
+    display: flex;
+     justify-content: center;
+
+}
+</style>
+</head>
+<body>
+    
+    <canvas id="canvas" width=" 400" height="500"> Oh no canvas!!</canvas>
+    
+    <script>
+        window.onload= init;
+        
+        let π= 3.14;
+        function init(){
+             let canvas = document.getElementById("canvas");
+              let context = canvas.getContext("2d")
+
+               context.beginPath();
+                context.arc(150, 100, 80, 0 , degreeR(360), false);
+                context.fillStyle= "#ffffcc";
+                 context.fill();
+                 context.stroke();
+
+                 context.beginPath();
+                  context.arc(115, 80, 10, 0 , degreeR(360), false);
+                   context.stroke();
+
+                   context.beginPath();
+                  context.arc(180, 80, 10, 0 , degreeR(360), false);
+                   context.stroke();
+
+                   context.beginPath();
+                    context.moveTo(150, 100);
+                     context.lineTo(150, 130);
+                     context.stroke();
+
+                     context.beginPath();
+                     context.arc(150, 110, 50, degreeR(20), degreeR(160), false);
+
+                     context.stroke();
+                     
+                    context.font = "italic bold 2rem fantasy";
+                    context.textAlign = "left"
+                    context.fillStyle = "black";
+                    context.fillText("The Boss fantasy", 200, 300, 180);
+
+                    context.font = "italic bold 2rem fantasy";
+                    context.fillStyle = "black";
+                    context.strokeText("The Boss", 200, 400);
+
+                    context.beginPath();
+                    context.moveTo(50, 340);
+                     context.lineTo(200, 340);
+                     context.stroke();
+                     context.textBaseline = "bottom";
+                     context.strokeText("james bond", 50, 340)
+
+        }
+        function degreeR(deg){
+         return (deg * π) / 180;
+      }
+ </script>
+</body>
+</html>

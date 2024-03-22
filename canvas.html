@@ -1,0 +1,78 @@
+<!doctype html>
+   <html>
+     <head>
+        <meta charset = "utf-8">
+        <title> canvas </title>
+
+<style>
+body{
+ 
+
+  height: 100%;
+  width: 100%;
+display: grid;
+ place-content: center;
+}
+
+  canvas{
+ border: 1px solid blue;
+  
+}
+
+</style>
+
+
+    </head>
+   <body>
+  
+    <canvas id= "canvas" width= "800" height= "250"> 
+     upgrade your browser!! </canvas>
+
+
+   <form>
+
+ <p>
+    <label  for= "bColor"> Select background color: </label>
+     <select id = "bColor"> 
+
+         <option value= "black"  selected= "selected"> Black </option>
+         <option value = "white"> White </option>
+    </select>
+
+ </p>
+
+  <p>
+       <label for= "shapes"> Circle or Square: </label>
+          <select id= "shapes">
+             <option value= "circle" > Circle </option>
+             <option  value= "none" selected= "selected"> None </option>
+             <option value= "squares"> Square </option>
+          </select>
+
+   </p> 
+
+<p>
+     <label for= "color"> Color: </label>
+      <select id= "color">
+           <option value = "white" selected= "selected"> White </option>
+           <option value= "black" > Black </option>
+        </select>
+ </p>
+
+   <p>
+     <label for= "tweet"> Pick a tweet: </label>
+     <input type= "text" placeholder= "Kindly Type">
+</p>
+
+   <p>
+ 
+    <input type= "button" id = "btn" value= "Preview">
+   </p> 
+
+</form>
+
+
+
+   <script src="script.js"></script>
+  </body>
+  </html>

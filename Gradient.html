@@ -1,0 +1,95 @@
+
+<!doctype html>
+ <html>
+   <head>
+     <meta charset="UTF-8">
+     <title> Gradient - Property </title>
+<style>
+:root{
+ --bg1: linear-gradient(to right, red, yellow);
+--bg2: radial-gradient(red, yellow);
+--bg3: radial-gradient(circle, red , yellow);
+ --bg4: conic-gradient(at 30% 60%, red 10%, yellow 50%);
+ --bg5: conic-gradient( from 25deg,
+red 40%, yellow 50%);
+--bg6: repeating-conic-gradient( red 30%, 
+transparent,yellow 40%);
+--head: orange;
+--body: green;
+} 
+
+ *{
+
+  margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+}
+
+body{
+ 
+background: var(--body); 
+}
+
+.container{
+margin: 5px auto;
+max-width: 500px;
+height: 500px;
+display: flex;
+gap: 1px;
+border: 2px solid orange;
+flex-flow: row wrap;
+ align-content: space-around;
+justify-content: center;
+}
+
+.box{
+ min-width:150px;
+ height: 150px;
+  background-color: var(--head); 
+   border-radius: 50%;
+}
+
+.b1{
+background-image: var(--bg1);	
+}
+.b2{
+background-image: var(--bg2);
+}
+.b3{
+background-image: var(--bg3);
+}
+.b4{
+ background-image: var(--bg4);
+}
+.b5{
+background-image: var(--bg5);
+}
+.b6{
+ background-image: var(--bg6);
+
+}
+
+
+
+</style>
+
+  </head>
+<body>
+<div class ="container">
+   <div class= "box b1"> </div>
+   <div class= "box b2"> </div>
+  <div class= "box b3"> </div>
+  <div class= "box b4"> </div>
+  <div class= "box b5"> </div>
+  <div class= "box b6"> </div>
+</div>
+  
+
+<script>
+
+
+
+ </script>
+
+</body>
+ </html>   

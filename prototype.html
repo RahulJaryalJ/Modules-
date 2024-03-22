@@ -1,0 +1,96 @@
+<!doctype html>
+  <html>
+    <head>
+      <meta charset="utf-8">
+      <title> Prototype - constructor </title>
+ 
+
+<style>
+.container{
+
+ background-image: radial-gradient(circle, blue, skyblue);
+ width: 200px;
+ height: 200px;
+ }
+
+
+
+
+</style>
+
+  </head>
+
+
+<body>
+
+<div id = "container" class="container"> hey you!! </div>
+
+
+<script>
+
+function Cons(parmas){
+   this.name = parmas.name;
+   this.age = parmas.age;
+   this.color = parmas.color;
+   this.height = parmas.height;
+
+};
+
+Cons.prototype.sex = "male";
+Cons.prototype.speak = function (){
+                         alert("he speaking good english");
+                           };
+
+Cons.prototype.eating = function (){
+                         alert("he eating good food");
+                          };
+Cons.prototype.chanting = function (chant){
+                           if(this.name === "mantras"){
+                             alert("he's chanting");
+                             }else {
+                              alert("he's singing");
+                               }
+                              };
+
+let man = {
+        name: "kishor",
+        age: 32,
+        height: 58,
+        color: "white"
+     };
+                              
+
+ let kishor = new Cons(man);
+ 
+let div = document.querySelector("#container");
+console.log(div);
+ div.textContent=  kishor.name;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>
+
+
+
+   

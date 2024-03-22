@@ -1,0 +1,93 @@
+<!doctype html>
+<html>
+   <head>
+    <meta charset="utf-8">
+   <title> constructor </title>
+  <style>
+body{
+display: flex;
+gap: 1rem;
+}
+
+div{
+width: 400px;
+height: 400px;
+color: white;
+background: linear-gradient(to left, orange, blue);}
+ 
+
+  </style>
+
+<body>
+
+ <div id = "one" class="object">   </div>
+
+<div class= "object">  </div>
+
+
+
+
+<script>
+ 
+let hilda = {
+name: "kishor",
+sex: "male",
+color: "fair"
+};
+
+window.onload = init();
+
+function init(){
+
+
+div = document.getElementById("one");
+
+
+ div.innerHTML= hilda;
+};
+
+
+let objects= document.querySelectorAll("div");
+
+function Dog(name, breed, age, color){
+
+  this.name= name;
+  this.breed= breed;
+  this.age= age;
+  this.color= color;
+};
+
+let dog1 = new Dog("woo", "gredan", 8, "pink");
+let dog2 = new Dog("doo", "chiuwaha", 6, "orange");
+let dog3 = new Dog("mary", "pamerian", 4, "green");
+let dog4 = new Dog("bruno", "pitbull", 3, "black");
+
+dog1.furry = true;
+ 
+delete dog1.name;
+
+ 
+
+
+let array= [];
+
+array.push(dog1, dog2);
+
+
+
+
+console.log(typeof(NaN));
+
+
+
+
+
+
+
+
+
+
+</script>
+
+</body>
+</html>

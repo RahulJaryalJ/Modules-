@@ -1,0 +1,80 @@
+
+<!doctype html>
+  <html>
+    <head>
+        <meta charset="utf-8">
+        <title> Geolocation </title>
+
+   <style>
+
+
+
+  </style>
+
+
+<body>
+  <h1> your location will go here </h1>
+
+  <div id="location"> </div>
+
+
+<script>
+
+window.onload= init;
+
+
+
+function init(){
+  if(navigator.geolocation){
+
+     navigator.geolocation.getCurrentPosition(displayLocation, displayError);
+  
+}
+  else{
+  alert("no api available");
+}
+};
+
+
+
+  function displayLocation(position){
+   alert("hello");
+ let latitude = position.coords.latitude;
+ let longitude= position. coords.longitude;
+
+
+  let div = document.getElementById("location");
+
+   div.innerHTML = "your latitude :" + latitude + "& longitude are:"
+   + logitude;
+ };
+
+     function displayError(error){
+        
+    let errorTypes = {
+              0: "unknown error",
+              1: " request denied by user",
+              2: " position isn't available",
+              3: " request time out"
+            };
+
+      let errorMessage = errorTypes[error.code];
+
+    if(error.code === 0 || error.code ===2){
+      errorMessage= errorMessage + "" + error.message;
+   };
+
+   
+  console.log("alert");
+
+};
+
+console.log("hello");
+    
+
+
+</script>
+
+
+</body>
+ </html>

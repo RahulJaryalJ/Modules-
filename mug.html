@@ -1,0 +1,210 @@
+
+ <!doctype html>
+<html>
+    <head> 
+      <meta charset="UTF-8">
+      <title> Mug </title>
+   
+<style>
+body{
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+background-color: green;
+height: 100vh;
+width: 100vw;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+.container{
+ position: relative;
+top: 80px;
+}
+.cup{
+ 
+ width: 300px;
+ height: 350px;
+ background: linear-gradient(to right, white, whitesmoke);
+ border-bottom-left-radius: 45%;
+ border-bottom-right-radius:45%;
+display:flex;
+justify-content: center;
+z-index:2;
+
+}  
+.top{
+position: absolute;
+height: 50px;
+width: 100%; 
+
+top: -25px;
+margin:0 auto;
+background:linear-gradient(to left, whitesmoke, white);
+
+display: flex;
+justify-content: center;
+border-radius: 50%;
+
+}
+.circle{
+position: absolute;
+top: 5px;
+left: 10px;
+width: calc(100% - 30px);
+height: 30px;
+background: linear-gradient(to right, #f9f9f9, #d9d9d9);
+border-radius: 50%;
+overflow:hidden;
+}
+.tea{
+position: absolute;
+background: linear-gradient(to left, #c57e65, #e28462);
+width: 100%;
+top: 5px;
+left: 0;
+border-radius: 50%;
+height: 100%;
+
+}
+
+.handle{
+border: 30px double whitesmoke;
+width: 160px;
+height: 180px;
+position: absolute;
+top: 10px;
+right:-100px;
+border-left: 30px double transparent;
+border-bottom: 30px double transparent;
+transform: rotate(42deg);
+border-radius: 50%;
+}
+.plate{
+ width: 500PX;
+height: 200PX;
+position: absolute;
+bottom: -40px;
+left:-95px;
+background-color: whitesmoke;
+border-radius: 50%;
+z-index:-1;
+box-shadow: 0 35px 35px rgba(0,0,0,0.2);
+
+}
+.plate::before{
+
+content:'';
+position: absolute;
+left:10px;
+top:10px;
+right:10px;
+bottom:10px;
+border-radius:50%;
+background: linear-gradient( to left, #e7e7e7, #e7e7e7);
+}
+.plate::after{
+content: '';
+position: absolute;
+left:30px;
+right: 30px;
+bottom: 30px;
+top: 30px;
+background:radial-gradient(rgba(0,0,0,0.2) 35%, transparent, 
+transparent
+);
+}
+
+.vapour{
+
+ position: relative;
+  display: flex;
+z-index:1;
+bottom: 25px;
+
+}
+
+  .vapour span{
+
+     min-width: 10px;
+     display: block;
+      height: 120px;
+      background-color: whitesmoke; 
+     border-radius: 50%;
+     margin: 0 4px ;
+     animation: anime 5s linear infinite;
+     filter: blur(5px);
+     opacity:0;
+     animation-delay:calc(var(--i) * 0.4s);
+}    
+
+
+@keyframes anime{
+
+    0% {
+    transform: translateY(0) scaleX(4);
+    opacity:0;
+    }
+15%{
+opacity:1;
+}
+
+50%{
+   transform: translateY(-100px) scaleX(7);
+   opacity: 1;
+}
+
+
+100%{
+    transform : translateY(-250px) scaleX(10);
+    opacity: 0;
+
+
+}
+</style>
+
+  </head>
+
+<body>
+   
+<div class="container">
+  <div class="cup"> 
+     <div class ="top">
+        <div class= "vapour">
+           <span style="--i: 16";> </span>
+           <span style= " --i:2";> </span>
+            <span style= "--i:15";> </span>
+            <span style = " --i: 12";> </span>
+            <span style= "--i:5";>   </span>
+           <span style= " --i:3";> </span>
+            <span style= "--i:7";> </span>
+           <span style= "--i:14;> </span>
+           <span style= "--i:9";> </span>
+            <span style = " --i:10";> </span>
+            <span style= "--i:6";> </span>
+            <span style= "--i:4";> </span>
+            <span style= "--i:13";> </span>
+            <span style = " --i:8";> </span>
+            <span style= "--i:3";> </span>
+            <span style= "--i:11";> </span>
+        </div>
+
+
+      <div class= "circle">
+     <div class= "tea">
+ </div>
+  
+   </div>     
+  </div>
+<div class="handle">  </div>
+ </div>  
+<div class= "plate"> </div>
+</div>
+
+
+
+
+
+ </body>
+</html

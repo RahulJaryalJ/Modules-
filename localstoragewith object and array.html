@@ -1,0 +1,288 @@
+
+
+
+<!doctype html>
+  <html>
+    <head> 
+      <meta charset= "utf-8">
+      <title> local storage </title>
+    <style>
+
+  body{
+
+ 
+  min-height: 100vh;
+ }
+
+ .container{
+    border: 2px solid orange;
+    width: 100vw;
+    height: calc(100vh - 80px);
+     margin-top: 1rem;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+    }
+
+ul{
+
+ display:flex;
+  justify-content: center;
+  align-items: center;
+ 
+   gap: 4px; 
+}
+ 
+li{
+  list-style: none;
+ }
+ .sticky{
+   width: 100px;
+   height: 100px;
+   
+   color: black;
+   display: grid;
+   place-content: center;
+
+ }
+input{
+ color: whitesmoke;
+  background-color: green;
+   border-radius:10%;
+   border : none;
+}
+
+
+
+
+
+
+    </style>
+
+
+ <body>
+
+  <form>
+
+     <label for = "color"> Color: </label>
+           <select id= "select"> 
+    
+            <option value= "yellow"> Yellow </option>
+            <option value= "orange"> Orange </option>
+            <option value= "bisque"> Blue </option>
+            <option value= "PaleGreen"> Pink </option>
+
+             
+            </select>
+ 
+ 
+     <input type= "text" id= "text">
+     <input type = "button" id= "btn" value = "clear">
+      
+      <input type= "button" id = "button" value = "please press">
+     </form>
+
+ <div class= "container">
+
+
+
+  <ul id= "stickies">
+
+   </ul>
+  
+    </div>
+
+ <script>
+  
+
+  window.onload= init;
+
+
+
+
+
+
+
+   function init(){
+
+
+ let button = document.getElementById("button");
+  
+  button.onclick = clicked;
+ 
+  let clr= document.getElementById("btn");
+   
+   clr.onclick = clear;
+
+      let ar = array();
+ 
+      for(let i=0; i<ar.length; i++){
+
+          let key = ar[i];
+
+            let value = JSON.parse(localStorage[key]);
+          
+            
+     addValue(value, key);
+  
+
+        }
+
+};
+
+
+ function clear() {
+    localStorage.clear();
+};
+ 
+
+function clicked(){
+  let text = document.getElementById("text");
+
+  let v = text.value;
+ 
+   let select = document.getElementById("select");
+
+     let index = select.selectedIndex;
+     let color = select[index].value;
+  
+    let clrObj = {
+
+       value : v,
+       color :  color
+};
+
+    console.log(clrObj.color);
+
+   let arr = array();
+
+       let date = new Date();
+
+           let time = date.getTime();
+            let key = "sticky_" + time;
+           
+arr.push(key); 
+
+
+
+     localStorage.setItem(key, JSON.stringify(clrObj));
+     localStorage.setItem("arr", JSON.stringify(arr));
+
+
+ addValue(clrObj, key);
+  
+};
+
+
+    function addValue(stic, ke){
+
+
+     let stickies = document.getElementById("stickies");
+       
+     let li = document.createElement("li");
+     let span = document.createElement("span");
+
+      li.setAttribute("id", ke);
+    
+    span.setAttribute("class", "sticky");
+
+     span.innerHTML= stic.value;   
+  
+      li.style.backgroundColor =  stic.color;
+
+      li.appendChild(span);
+
+      stickies.appendChild(li);
+ 
+     
+  
+         li.onclick = dltDom;
+
+
+};
+
+
+  function array(){
+   
+  let arr = localStorage.getItem("arr");
+
+    if(!arr){
+  
+      arr = [ ];
+
+     localStorage.setItem("arr", JSON.stringify(arr));
+
+      } else {
+
+           arr =  JSON.parse(arr);
+    }
+
+    return arr;
+};
+
+
+
+
+function dltDom(e){
+
+       let key = e.target.id;
+
+       if(e.target.tagName.toLowerCase() === "span"){
+                key = e.target.parentNode.id;
+
+            };
+
+          
+         localStorage.removeItem(key);
+
+
+  let arr = array();
+
+  if(arr){
+
+  for( let i=0; i<arr.length; i++){
+   
+     if(key === arr[i]){
+
+         arr.splice(i, 1);
+
+}
+ 
+}
+  localStorage.setItem("arr", JSON.stringify(arr));
+
+let dltSticky = document.getElementById(key);
+
+
+         dltSticky.parentNode.removeChild(dltSticky);
+
+}
+
+};
+                 
+
+
+   
+    
+ 
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+   </script>
+
+
+ </body>
+   </html>
